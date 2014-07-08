@@ -1,4 +1,6 @@
-body{font-family: Raleway}
+body{font-family: Raleway;}
+
+.posRel{position: relative}
 .slide1{
     background: url(../img/bg.jpg);
     background-size: cover; 
@@ -20,12 +22,14 @@ body{font-family: Raleway}
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    transition: all 0.3s ease 0s;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -webkit-transition: all 0.3s ease 0s;
     width: 100%;
     z-index: -1;
 }
 .treatedbtn {
     border-radius: 3px;
+    -webkit-border-radius: 3px;
     color: #fff;
     display: inline-block;
     font-size: 21px;
@@ -84,10 +88,9 @@ border-radius: 50%;-webkit-border-radius: 50%;
 .hideIt{display: none}
 .coverIt{visibility: hidden}
 .slideWrapper{padding-top: 50px;}
-.slideRight{margin-left: 100px;animation: slideRight 1s ease-in-out}
+.slideRight{margin-left: 100px;animation: slideRight 1s ease-in-out;-webkit-animation: slideRight 1s ease-in-out}
 .textContainer{width: 60%;float: right;}
-.brick{width:70%;height: 80px;border:1px solid #5CC3AE;box-shadow: 2px 2px 5px #888;margin: 50px auto;padding: 15px 15px}
-.slideLeft{animation: bigEntrance 1s ease-in-out}
+.brick{width:70%;height: 80px;border:1px solid #5CC3AE;box-shadow: 2px 2px 5px #888;-webkit-box-shadow: 2px 2px 5px #888;margin: 50px auto;padding: 15px 15px}
 .brick i {
     float: left;
     font-size: 50px;
@@ -96,8 +99,8 @@ border-radius: 50%;-webkit-border-radius: 50%;
     font-size: 30px;
     margin-left: 75px;
 }
-.flickIt{animation: flick 1s linear}
-.flickItRight{animation: flickRight 1s linear}
+.flickIt{animation: flick 1s linear;-webkit-animation: flick 1s linear}
+.flickItRight{animation: flickRight 1s linear;-webkit-animation: flickRight 1s linear}
 .centerMe{text-align: center;}
 .imgHldr{
     width: 300px;
@@ -106,15 +109,25 @@ border-radius: 50%;-webkit-border-radius: 50%;
 .textHead{ font-size: 3em;}
 .tablets{padding-top: 50px;}
 .textSub{width:80%; font-size: 1.5em;margin: 0 auto;text-align: justify}
+footer {background: #D5D4D2}
 footer ul{list-style: none;}
 footer ul li{display: inline-block;padding:10px 10px 0px 10px }
-footer .subFooter{margin-bottom: 10px;}
+footer .subFooter{padding-bottom: 10px;}
+.parallel .textSub,.parallel .textHead{color: #fff;text-shadow: 1px 1px 2px #000;-webkit-text-shadow: 1px 1px 2px #000;}
 .imgHldr img{width:100%;height: auto;}
+.backcover{background: url(../img/bg.jpg);background-size: cover;width: 100%;height: 100%;z-index: -1;position: fixed;top:0;left: 0px;}
+
 @keyframes flick{
     0% {transform:translateX(0px)}
 50% {transform:translateX(30px)}
 50% {transform:translateX(-10px)}
 100% {transform:translateX(0px)}
+}
+@-webkit-keyframes flick{
+    0% {-webkit-transform:translateX(0px)}
+50% {-webkit-transform:translateX(30px)}
+50% {-webkit-transform:translateX(-10px)}
+100% {-webkit-transform:translateX(0px)}
 }
 @keyframes flickRight{
     0% {transform:translateX(0px)}
@@ -122,56 +135,27 @@ footer .subFooter{margin-bottom: 10px;}
 50% {transform:translateX(30px)}
 100% {transform:translateX(0px)}
 }
+@-webkit-keyframes flickRight{
+    0% {-webkit-transform:translateX(0px)}
+50% {-webkit-transform:translateX(-20px)}
+50% {-webkit-transform:translateX(30px)}
+100% {-webkit-transform:translateX(0px)}
+}
 @keyframes slideRight {
-0% {
-    transform: translateX(-150%);
+0% {   transform: translateX(-150%);}
+50% {    transform: translateX(8%);}
+65% {    transform: translateX(-4%);}
+80% {    transform: translateX(4%);}
+95% {    transform: translateX(-2%);}
+100% {    transform: translateX(0%);}
 }
-50% {
-    transform: translateX(8%);
-}
-65% {
-    transform: translateX(-4%);
-}
-80% {
-    transform: translateX(4%);
-}
-95% {
-    transform: translateX(-2%);
-}
-100% {
-    transform: translateX(0%);
-}
-}
-
-@keyframes bigEntrance {
-0% {
-    opacity: 0.2;
-    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
-}
-30% {
-    opacity: 1;
-    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
-}
-45% {
-    opacity: 1;
-    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
-}
-60% {
-    opacity: 1;
-    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
-}
-75% {
-    opacity: 1;
-    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
-}
-90% {
-    opacity: 1;
-    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
-}
-100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
-}
+@-webkit-keyframes slideRight {
+0% {   -webkit-transform: translateX(-150%);}
+50% {    -webkit-transform: translateX(8%);}
+65% {    -webkit-transform: translateX(-4%);}
+80% {    -webkit-transform: translateX(4%);}
+95% {    -webkit-transform: translateX(-2%);}
+100% {    -webkit-transform: translateX(0%);}
 }
 
 @media (max-width:768px)
@@ -179,3 +163,20 @@ footer .subFooter{margin-bottom: 10px;}
     .treatedbtn{display: block;margin:10px auto;max-width: 300px;}
     
 }
+
+
+.dashboard header{
+    height: 60px;
+    background-color:#5CC3AE;
+    position: fixed;top:0;left:0;
+    width: 100%;z-index: 9999;
+}
+.dashboard .sidebar{
+    height: 100%;
+    background: #e8e8e8;
+    position: fixed;top:0;left:0;
+    width: 20%;
+}
+.sideTabs{padding: 15px 0;border-bottom: 2px solid #ccc;}
+.profImg {margin-top: 60px;}
+.profImg img{width: 100%;height: auto;}
