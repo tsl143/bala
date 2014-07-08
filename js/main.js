@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('section').height(screen.height-50);
+    $('section').height(screen.height-100);
 });
 $(window).scroll(function(){
     if (isScrolledIntoView($('#phoneContainer'))){ 
@@ -13,11 +13,7 @@ $(window).scroll(function(){
         $(".textContainer .brick:nth-child(odd)").removeClass('flickIt');
         $(".textContainer .brick:nth-child(even)").removeClass('flickItRight');
         }
-    
-    
 });
-
-
 function isScrolledIntoView(elem)
 {
     var docViewTop = $(window).scrollTop();

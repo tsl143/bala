@@ -98,6 +98,18 @@ border-radius: 50%;-webkit-border-radius: 50%;
 }
 .flickIt{animation: flick 1s linear}
 .flickItRight{animation: flickRight 1s linear}
+.centerMe{text-align: center;}
+.imgHldr{
+    width: 300px;
+    margin: 0 auto;
+}
+.textHead{ font-size: 3em;}
+.tablets{padding-top: 50px;}
+.textSub{width:80%; font-size: 1.5em;margin: 0 auto;text-align: justify}
+footer ul{list-style: none;}
+footer ul li{display: inline-block;padding:10px 10px 0px 10px }
+footer .subFooter{margin-bottom: 10px;}
+.imgHldr img{width:100%;height: auto;}
 @keyframes flick{
     0% {transform:translateX(0px)}
 50% {transform:translateX(30px)}
